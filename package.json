@@ -11,7 +11,8 @@
     "test:watch": "vitest --coverage",
     "test:ui": "vitest --ui",
     "lint": "eslint src/**/*.{ts,tsx}",
-    "prettier": "prettier -w src/**/*.{ts,tsx}"
+    "prettier": "prettier -w src/**/*.{ts,tsx}",
+    "prepare": "husky install"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -41,6 +42,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.1",
     "jsdom": "^20.0.1",
     "postcss": "^8.4.17",
     "prettier": "^2.7.1",
