@@ -6,11 +6,11 @@ import App from "./App";
 describe("Testing App All Routes", () => {
   it("Verify Home Page", async () => {
     render(
-      <MemoryRouter initialEntries={["/", "/login"]} initialIndex={0}>
+      <MemoryRouter initialEntries={["/"]}>
         <App />
       </MemoryRouter>
     );
-    const homePage = screen.getByTestId("home-page");
+    const homePage = await waitFor(() => screen.getByTestId("home-page"));
     expect(homePage).toBeInTheDocument();
   });
   it("Verify Login Page", async () => {
