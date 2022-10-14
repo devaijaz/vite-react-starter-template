@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 export type User = {
@@ -16,12 +17,10 @@ export const useFetch = (url: string) => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(url)
+    axios
+      .get(url)
       .then((response) => {
-        if (!response.ok) {
-          throw new Error("Error fetching Data");
-        }
-        return response.json();
+        return response.data;
       })
       .catch((err: Error) => {
         setError(err.message);
